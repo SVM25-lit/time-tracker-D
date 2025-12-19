@@ -8,6 +8,10 @@ import json
 
 main_bp = Blueprint('main', __name__)
 
+@main_bp.route('/')
+def index():
+    return render_template('base.html')
+
 @main_bp.route('/dashboard')
 @login_required
 def dashboard():
